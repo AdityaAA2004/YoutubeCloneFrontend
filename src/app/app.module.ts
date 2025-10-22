@@ -11,7 +11,8 @@ import {UploadVideoComponent} from './upload-video/upload-video.component';
 import {CommonModule} from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {HeaderComponent} from './header/header.component';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   imports: [
     BrowserModule,
@@ -21,6 +22,8 @@ import {HeaderComponent} from './header/header.component';
     NgxFileDropModule,
     CommonModule,
     MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi())
