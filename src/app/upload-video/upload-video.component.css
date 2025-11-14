@@ -1,0 +1,10 @@
+.upload-component-spacing {
+  padding: 20px;
+  flex: 1;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.browse-files-margin {
+  margin-left: 20px;
+}

@@ -14,6 +14,6 @@ export class VideoService {
     fileEntry.file((file: File) => {
       formData.append('file', file, fileEntry.name);
     });
-    return this.apiService.postFormData(formData);
+    return this.apiService.uploadVideo(formData);
   }
 }

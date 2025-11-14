@@ -13,6 +13,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {HeaderComponent} from './header/header.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {ZardButtonComponent} from '@shared/zardui_components/button/button.component';
+import {ZardTableModule} from '@shared/zardui_components/table/table.module';
 @NgModule({
   imports: [
     BrowserModule,
@@ -24,6 +26,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    ZardButtonComponent,
+    ZardTableModule
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi())
