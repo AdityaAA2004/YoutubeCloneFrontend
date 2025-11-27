@@ -7,6 +7,6 @@ export const routes: Routes = [
     path: 'upload', component: UploadVideoComponent
   },
   {
-    path: 'save-video-details/:videoId', component: SaveVideoDetailsComponent
+    path: 'save-video-details', component: SaveVideoDetailsComponent
   }
 ];

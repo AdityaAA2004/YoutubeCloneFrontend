@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxFileDropModule} from 'ngx-file-drop';
 import {provideHttpClient, withInterceptorsFromDi} from '@angular/common/http';
 import { RouterModule} from '@angular/router';
@@ -15,6 +15,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {ZardButtonComponent} from '@shared/zardui_components/button/button.component';
 import {ZardTableModule} from '@shared/zardui_components/table/table.module';
+import {ZardInputDirective} from '@shared/zardui_components/input/input.directive';
+import {SaveVideoDetailsComponent} from './save-video-details/save-video-details.component';
+import {MatFormField, MatOption, MatSelect} from '@angular/material/select';
+import {MatChipGrid, MatChipInput, MatChipRow} from '@angular/material/chips';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -27,7 +32,15 @@ import {ZardTableModule} from '@shared/zardui_components/table/table.module';
     MatToolbarModule,
     MatIconModule,
     ZardButtonComponent,
-    ZardTableModule
+    ZardTableModule,
+    ZardInputDirective,
+    ReactiveFormsModule,
+    MatSelect,
+    MatOption,
+    MatChipGrid,
+    MatChipRow,
+    MatChipInput,
+    MatFormField
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi())
@@ -35,7 +48,8 @@ import {ZardTableModule} from '@shared/zardui_components/table/table.module';
   declarations: [
     AppComponent,
     UploadVideoComponent,
-    HeaderComponent
+    HeaderComponent,
+    SaveVideoDetailsComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -1,1 +1,41 @@
-<p>save-video-details works!</p>
+<div class="save-video-container">
+  <div class="first-container">Hi</div>
+  <div class="second-container">
+    <div class="title-in-second-container">Add Video Metadata</div>
+    <form class="form-in-second-container" [formGroup]="videoMetadataFormGroup">
+      <input z-input placeholder="Video Title" required formControlName="title" />
+      <textarea z-input placeholder="Description" [rows]="5" [cols]="5" formControlName="description"></textarea>
+      <mat-select placeholder="Video Status" formControlName="videoStatus">
+        <mat-option value="PUBLIC">Public</mat-option>
+        <mat-option value="PRIVATE">Private</mat-option>
+        <mat-option value="UNLISTED">Unlisted</mat-option>
+      </mat-select>
+      <div  class="tags-container">
+        <mat-chip-grid #templateChipGrid aria-label="Add video tags" [(ngModel)]="videoTags" formControlName="videoTags">
+          @for (tag of videoTags(); track tag) {
+            <mat-chip-row (removed)="removeTag(tag)">
+              {{tag}}
+              <button matChipRemove [attr.aria-label]="'remove template form' + tag">
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip-row>
+          }
+        </mat-chip-grid>
+        <input
+          class="tag-input"
+          z-input
+          placeholder="New tag..."
+          [matChipInputFor]="templateChipGrid"
+          (matChipInputTokenEnd)="addTag($event)"
+        />
+      </div>
+      <button z-button type="submit" zType="default">Save</button>
+    </form>
+  </div>
+  <div class="third-container">
+    Video Player
+  </div>
+  <div class="fourth-container">
+    Hi
+  </div>
+</div>
