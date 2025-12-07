@@ -5,8 +5,9 @@
     <button mat-icon-button class="example-icon" aria-label="Example user verified icon">
       <mat-icon>video_call</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon" aria-label="Example user verified icon">
+    <button *ngIf="isAuthenticated" mat-icon-button class="example-icon" aria-label="Example user verified icon">
       <mat-icon>account_circle</mat-icon>
     </button>
+    <button *ngIf="!isAuthenticated" mat-raised-button color="accent" (click)="login()">Login</button>
   </mat-toolbar-row>
 </mat-toolbar>

@@ -1,4 +1,5 @@
-export const environment = {
-  production: false,
-  apiHostUrl: 'http://localhost:8080'
+import config from '../config/config.json';
+export const local_environment = {
+  ...config,
+  production: false
 };

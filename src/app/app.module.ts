@@ -24,6 +24,8 @@ import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
 import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import {ZardToastComponent} from '@shared/zardui_components/toast/toast.component';
 import {SaveVideoDetailsModule} from './save-video-details/save-video-details.module';
+import { AuthConfigModule } from './auth/auth-config.module';
+import {AuthModule} from 'angular-auth-oidc-client';
 
 @NgModule({
   imports: [
@@ -51,7 +53,9 @@ import {SaveVideoDetailsModule} from './save-video-details/save-video-details.mo
     VgOverlayPlayModule,
     VgBufferingModule,
     ZardToastComponent,
-    SaveVideoDetailsModule
+    SaveVideoDetailsModule,
+    AuthConfigModule,
+    AuthModule
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi())
