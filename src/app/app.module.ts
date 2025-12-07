@@ -16,9 +16,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {ZardButtonComponent} from '@shared/zardui_components/button/button.component';
 import {ZardTableModule} from '@shared/zardui_components/table/table.module';
 import {ZardInputDirective} from '@shared/zardui_components/input/input.directive';
-import {SaveVideoDetailsComponent} from './save-video-details/save-video-details.component';
 import {MatFormField, MatOption, MatSelect} from '@angular/material/select';
 import {MatChipGrid, MatChipInput, MatChipRow} from '@angular/material/chips';
+import {VgCoreModule} from '@videogular/ngx-videogular/core';
+import {VgControlsModule} from '@videogular/ngx-videogular/controls';
+import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
+import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
+import {ZardToastComponent} from '@shared/zardui_components/toast/toast.component';
+import {SaveVideoDetailsModule} from './save-video-details/save-video-details.module';
 
 @NgModule({
   imports: [
@@ -40,7 +45,13 @@ import {MatChipGrid, MatChipInput, MatChipRow} from '@angular/material/chips';
     MatChipGrid,
     MatChipRow,
     MatChipInput,
-    MatFormField
+    MatFormField,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule,
+    ZardToastComponent,
+    SaveVideoDetailsModule
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi())
@@ -48,8 +59,7 @@ import {MatChipGrid, MatChipInput, MatChipRow} from '@angular/material/chips';
   declarations: [
     AppComponent,
     UploadVideoComponent,
-    HeaderComponent,
-    SaveVideoDetailsComponent
+    HeaderComponent
   ],
   bootstrap: [AppComponent]
 })

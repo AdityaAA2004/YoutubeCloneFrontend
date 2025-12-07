@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {NgxFileDropEntry} from 'ngx-file-drop';
 import {FileSystemFileEntry} from 'ngx-file-drop';
-import {VideoService} from './video/video.service';
+import {VideoService} from '../services/video/video.service';
 import {Router} from '@angular/router';
 import {DataService} from '../data/data.service';
 
