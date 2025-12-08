@@ -1,0 +1,41 @@
+.video-page-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  gap: 0.5rem;
+}
+
+.video-container {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-main-display-container {
+  flex: 1 1 50%;
+}
+
+.second-container {
+  flex: 1 1 5%;
+}
+
+.suggestions-bar-container {
+  flex: 1 1 30%;
+}
+
+.video-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  flex: 0 0 auto;
+}
+
+.video-container-description-and-date-container {
+  flex: 1 1 25%;
+}
+
+.video-container-likes-comments-container {
+  flex: 1 1 25%;
+}

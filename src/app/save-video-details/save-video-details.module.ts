@@ -40,8 +40,9 @@ import {ZardInputDirective} from '@shared/zardui_components/input/input.directiv
     ZardButtonComponent,
     ZardInputDirective
   ],
-  exports: [
-    SaveVideoDetailsComponent
-  ]
+    exports: [
+        SaveVideoDetailsComponent,
+        VideoPlayerComponent
+    ]
 })
 export class SaveVideoDetailsModule { }

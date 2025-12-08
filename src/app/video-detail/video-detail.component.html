@@ -1,0 +1,20 @@
+<div class="video-page-container">
+  <div class="video-container">
+      <div class="video-main-display-container">
+        <app-video-player *ngIf="videoLoaded" [videoUrl]="videoUrl"></app-video-player>
+      </div>
+      <div class="video-container-description-and-date-container">
+        <div class="video-title">{{videoTitle}}</div>
+        <span>{{todayDate.toDateString() + ""}}</span>
+        <br/>
+        <span>{{videoDescription}}</span>
+      </div>
+
+      <div class="video-container-likes-comments-container">
+         Likes and comments Section
+      </div>
+  </div>
+  <div class="second-container"></div>
+  <div class="suggestions-bar-container">Suggestion Bar</div>
+</div>
+

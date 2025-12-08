@@ -35,7 +35,7 @@ export class SaveVideoDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.videoId = this.dataService.getVideoId();
+    this.videoId = this.dataService.getVideoIdForSaveVideo();
     if (!this.videoId) {
       this.router.navigateByUrl('/');
       throw new Error('Video ID is required to save video details');
@@ -97,6 +97,13 @@ export class SaveVideoDetailsComponent implements OnInit {
             closeButton: true
           });
           this.thumbnailUrl = data.thumbnailUrl;
+        },
+        error: (error) => {
+          console.error('Error uploading thumbnail:', error);
+          toast.error('Failed to upload thumbnail', {
+            position: "bottom-center",
+            closeButton: true
+          });
         }
       });
   }
@@ -117,6 +124,9 @@ export class SaveVideoDetailsComponent implements OnInit {
           position: "bottom-center",
           closeButton: true
         });
+        this.dataService.setVideoIdForViewVideo(this.videoId);
+        this.dataService.setVideoIdForSaveVideo('');
+        this.router.navigateByUrl('/video');
       },
       error: (error) => {
         console.error('Error saving video details:', error);

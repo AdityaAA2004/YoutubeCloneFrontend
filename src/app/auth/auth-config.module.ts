@@ -13,6 +13,10 @@ import { local_environment } from '../../environments/environment';
             responseType: 'code',
             silentRenew: true,
             useRefreshToken: true,
+            secureRoutes: [local_environment.apiHostURL+'/'],
+            customParamsAuthRequest: {
+              audience: local_environment.apiHostURL
+            }
         }
       })],
     exports: [AuthModule],

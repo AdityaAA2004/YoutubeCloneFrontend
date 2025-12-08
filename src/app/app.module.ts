@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxFileDropModule} from 'ngx-file-drop';
-import {provideHttpClient, withInterceptorsFromDi} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi} from '@angular/common/http';
 import { RouterModule} from '@angular/router';
 import {routes} from './app.routes';
 import {AppComponent} from './app.component';
@@ -25,7 +25,7 @@ import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import {ZardToastComponent} from '@shared/zardui_components/toast/toast.component';
 import {SaveVideoDetailsModule} from './save-video-details/save-video-details.module';
 import { AuthConfigModule } from './auth/auth-config.module';
-import {AuthModule} from 'angular-auth-oidc-client';
+import {AuthInterceptor, AuthModule} from 'angular-auth-oidc-client';
 
 @NgModule({
   imports: [
@@ -58,7 +58,8 @@ import {AuthModule} from 'angular-auth-oidc-client';
     AuthModule
   ],
   providers: [
-    provideHttpClient(withInterceptorsFromDi())
+    provideHttpClient(withInterceptorsFromDi()),
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   declarations: [
     AppComponent,

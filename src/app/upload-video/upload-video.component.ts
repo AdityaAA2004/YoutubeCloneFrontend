@@ -58,7 +58,7 @@ export class UploadVideoComponent {
       this.videoService.uploadVideo(fileEntry).subscribe({
         next: response => {
           console.log('Upload successful', response);
-          this.dataService.setVideoId(response.videoId);
+          this.dataService.setVideoIdForSaveVideo(response.videoId);
           this.router.navigateByUrl('/save-video-details');
         },
         error: error => {
